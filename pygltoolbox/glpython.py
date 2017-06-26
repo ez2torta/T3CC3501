@@ -26,8 +26,7 @@ import os
 _DEFAULT_CAPTION = 'Program title'
 
 
-def initPygame(w, h, caption=_DEFAULT_CAPTION, center_mouse=False, icon=None,
-               centered=False):
+def initPygame(w, h, caption=_DEFAULT_CAPTION, center_mouse=False, icon=None, centered=False):
     """
     Inicia Pygame
 
@@ -42,12 +41,13 @@ def initPygame(w, h, caption=_DEFAULT_CAPTION, center_mouse=False, icon=None,
     pygame.init()
     if centered:
         os.environ['SDL_VIDEO_CENTERED'] = '1'
-    pygame.display.set_mode((w, h), OPENGLBLIT | DOUBLEBUF)
+    surface = pygame.display.set_mode((w, h), OPENGLBLIT | DOUBLEBUF)
     pygame.display.set_caption(caption)
     if center_mouse:
         pygame.mouse.set_pos(w / 2, h / 2)
     if icon is not None:
         pygame.display.set_icon(icon)
+    return surface
 
 
 # noinspection PyBroadException,PyUnresolvedReferences
