@@ -15,9 +15,7 @@ class Matriz(object):
 
 	def __init__(self):
 		self.textures = [
-		    load_texture('ejemplo_data/metal-texture.jpg'),
-		    load_texture('ejemplo_data/metal-normal.jpg'),
-		    load_texture('ejemplo_data/metal-bump.jpg')
+		    load_texture('ejemplo_data/blanco.jpg'),
 		]
 		# Matrix de 20 x 20
 		self.matrix = np.ones((20,20))
@@ -31,7 +29,7 @@ class Matriz(object):
 		        cubo = Particle(a,b,c)
 		        cubo.add_property('GLLIST', create_cube_textured(self.textures))
 		        cubo.add_property('SIZE', [80, 80, 80])
-		        cubo.add_property('MATERIAL', material_white_rubber)
+		        cubo.add_property('MATERIAL', material_white_plastic)
 		        self.cube_matrix.append(cubo)
 
 

@@ -18,7 +18,7 @@ class Luz(object):
 		self.luz = Particle(1000, -1000, 1000)
 		self.luz.set_name('Luz fija')
 		self.luz.add_property('GLLIST', create_cube())
-		self.luz.add_property('SIZE', [20, 20, 20])
+		self.luz.add_property('SIZE', [50, 50, 50])
 		self.luz.add_property('MATERIAL', material_silver)
 
 	def update(self):

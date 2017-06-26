@@ -18,22 +18,17 @@ def revisar_keys():
     # Comprueba las teclas presionadas
     keys = pygame.key.get_pressed()
 
-    if keys[K_w]:
-        camera.rotateX(CAMERA_ROT_VEL)
-    elif keys[K_s]:
-        camera.rotateX(-CAMERA_ROT_VEL)
+    # Moverse en el eje X
+    if keys[K_UP]:
+        cubo.move_up()
+    elif keys[K_DOWN]:
+        cubo.move_down()
 
-    # Rotar la cámara en el eje Y
-    if keys[K_a]:
-        camera.rotateY(-CAMERA_ROT_VEL)
-    elif keys[K_d]:
-        camera.rotateY(CAMERA_ROT_VEL)
-
-    # Rotar la cámara en el eje Z
-    if keys[K_q]:
-        camera.rotateZ(-CAMERA_ROT_VEL)
-    elif keys[K_e]:
-        camera.rotateZ(CAMERA_ROT_VEL)
+    # Moverse en el eje Y
+    if keys[K_LEFT]:
+        cubo.move_left()
+    elif keys[K_RIGHT]:
+        cubo.move_right()
 
     # Acerca / aleja la cámara
     if keys[K_n]:
